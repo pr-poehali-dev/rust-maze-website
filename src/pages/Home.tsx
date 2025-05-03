@@ -8,15 +8,18 @@ import HeroSection from "@/components/HeroSection";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#171614] to-[#2D2A26]">
+    <div className="min-h-screen rust-background">
       <NavBar />
       <HeroSection />
       
-      <div className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-amber-500 mb-8 text-center">Добро пожаловать в Rust Maze Rust</h2>
+      <div className="container mx-auto px-4 py-12 relative">
+        {/* Декоративный элемент */}
+        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-1 h-40 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent"></div>
+        
+        <h2 className="text-3xl font-bold text-amber-500 mb-8 text-center rust-title">Добро пожаловать в Rust Maze Rust</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-slate-800 border-amber-600 hover:shadow-md hover:shadow-amber-500/20 transition-all">
+          <Card className="bg-slate-800/90 border-amber-600/50 hover:shadow-md hover:shadow-amber-500/20 transition-all backdrop-blur-sm rust-container">
             <CardHeader>
               <CardTitle className="text-amber-500">Последние новости</CardTitle>
             </CardHeader>
@@ -28,7 +31,7 @@ const Home = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-slate-800 border-amber-600 hover:shadow-md hover:shadow-amber-500/20 transition-all">
+          <Card className="bg-slate-800/90 border-amber-600/50 hover:shadow-md hover:shadow-amber-500/20 transition-all backdrop-blur-sm rust-container">
             <CardHeader>
               <CardTitle className="text-amber-500">Правила сервера</CardTitle>
             </CardHeader>
@@ -40,7 +43,7 @@ const Home = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-slate-800 border-amber-600 hover:shadow-md hover:shadow-amber-500/20 transition-all">
+          <Card className="bg-slate-800/90 border-amber-600/50 hover:shadow-md hover:shadow-amber-500/20 transition-all backdrop-blur-sm rust-container">
             <CardHeader>
               <CardTitle className="text-amber-500">Поддержать проект</CardTitle>
             </CardHeader>
@@ -52,6 +55,9 @@ const Home = () => {
             </CardContent>
           </Card>
         </div>
+        
+        {/* Декоративный элемент внизу */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent my-8"></div>
       </div>
       
       <Footer />
