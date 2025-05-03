@@ -4,66 +4,107 @@ import Icon from "@/components/ui/icon";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-gray-400 py-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-slate-900/80 border-t border-amber-800/30 backdrop-blur-sm">
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-amber-500 mb-4">Rust Maze Rust</h3>
-            <p className="mb-4">
+            <h3 className="text-amber-500 font-bold text-lg mb-4">Rust Maze Rust</h3>
+            <p className="text-gray-400">
               Уникальный проект с лабиринтами, PvP аренами и захватывающими испытаниями в мире Rust.
             </p>
-            <div className="flex gap-4">
-              <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500">
-                <Icon name="DiscordLogo" size={24} />
+            <div className="flex space-x-4 mt-4">
+              <a href="https://discord.gg" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-amber-500">
+                <Icon name="Discord" size={20} />
               </a>
-              <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500">
-                <Icon name="Globe" size={24} />
+              <a href="https://vk.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-amber-500">
+                <Icon name="MessageCircle" size={20} />
               </a>
-              <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500">
-                <Icon name="Send" size={24} />
+              <a href="https://t.me" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-amber-500">
+                <Icon name="Send" size={20} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-amber-500">
+                <Icon name="Youtube" size={20} />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Навигация</h3>
+            <h3 className="text-amber-500 font-bold text-lg mb-4">Навигация</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-amber-500 transition-colors">Главная</Link></li>
-              <li><Link to="/news" className="hover:text-amber-500 transition-colors">Новости</Link></li>
-              <li><Link to="/rules" className="hover:text-amber-500 transition-colors">Правила</Link></li>
-              <li><Link to="/donate" className="hover:text-amber-500 transition-colors">Донат</Link></li>
+              <li>
+                <Link to="/" className="text-gray-400 hover:text-amber-500 transition-colors">
+                  Главная
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="text-gray-400 hover:text-amber-500 transition-colors">
+                  Новости
+                </Link>
+              </li>
+              <li>
+                <Link to="/rules" className="text-gray-400 hover:text-amber-500 transition-colors">
+                  Правила
+                </Link>
+              </li>
+              <li>
+                <Link to="/donate" className="text-gray-400 hover:text-amber-500 transition-colors">
+                  Донат
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Сервера</h3>
+            <h3 className="text-amber-500 font-bold text-lg mb-4">Сервера</h3>
             <ul className="space-y-2">
-              <li>Лабиринт #1: 192.168.1.1:28015</li>
-              <li>Арена #1: 192.168.1.2:28015</li>
-              <li>Выживание: 192.168.1.3:28015</li>
+              <li className="text-gray-400 flex items-center">
+                <span className="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                Основной сервер (48/100)
+              </li>
+              <li className="text-gray-400 flex items-center">
+                <span className="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                PvP арена (29/50)
+              </li>
+              <li className="text-gray-400 flex items-center">
+                <span className="w-3 h-3 bg-amber-500 rounded-full mr-2"></span>
+                Лабиринт (45/50)
+              </li>
+              <li className="text-gray-400 flex items-center">
+                <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                Тестовый (0/20)
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Контакты</h3>
+            <h3 className="text-amber-500 font-bold text-lg mb-4">Контакты</h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <Icon name="Mail" size={18} />
+              <li className="text-gray-400 flex items-start">
+                <Icon name="Mail" size={20} className="mr-2 mt-1 shrink-0" />
                 <span>support@rustmaze.ru</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Icon name="MessageSquare" size={18} />
-                <span>Discord: RustMaze</span>
+              <li className="text-gray-400 flex items-start">
+                <Icon name="MessagesSquare" size={20} className="mr-2 mt-1 shrink-0" />
+                <span>Discord: Rust Maze Rust</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>© 2025 Rust Maze Rust. Все права защищены.</p>
-          <div className="mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-amber-500 mr-4">Политика конфиденциальности</Link>
-            <Link to="/terms" className="text-gray-400 hover:text-amber-500">Условия использования</Link>
+        <div className="border-t border-gray-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} Rust Maze Rust. Все права защищены.
+          </p>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link to="/rules" className="text-gray-500 hover:text-amber-500 text-sm">
+              Правила
+            </Link>
+            <Link to="/donate" className="text-gray-500 hover:text-amber-500 text-sm">
+              Донат
+            </Link>
+            <Link to="/rules" className="text-gray-500 hover:text-amber-500 text-sm">
+              Политика конфиденциальности
+            </Link>
           </div>
         </div>
       </div>
